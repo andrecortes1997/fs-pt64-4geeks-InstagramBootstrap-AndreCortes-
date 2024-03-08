@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="styles.css">
+
+  <title>Instagram?</title>
+</head>
+
+<body>
+  <!--
+  <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <h5 class="bi bi-instagram text-black"></i> Instagram</h5>
+      <div class="col-md-auto">
+        <button type="button" class="btn btn-success">Create a new post</button>
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown">
+          <i class="bi bi-gear-fill"></i>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Profile</a></li>
+          <li><a class="dropdown-item" href="#">Accesibility</a></li>
+          <li><a class="dropdown-item" href="#">Privacy and Data</a></li>
+          <div class="dropdown-divider"></div>
+          <li><a class="dropdown-item text-danger" href="#">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+     -->
+
+  <div class="container-fluid">
+    <nav class="nav navbar-light bg-light">
+      <div class="col">
+        <h5 class="bi bi-instagram text-black"></i> Instagram</h5>
+      </div>
+      <div class="col-md-auto">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#myModal">
+          Create a new post
+        </button>
+      </div>
+
+      <!-- The Modal -->
+      <div class="modal" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Create a new post</h4>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+              <form>
+                <div class="form-group ">
+                  <label for="recipient-name" class="col-form-label">Caption:</label>
+                  <input type="text" class="form-control" id="recipient-name" placeholder="Add the caption of your post here">
+                </div>
+                <i class="bi bi-camera"></i>  <i class="bi bi-geo-alt"></i>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-success" data-bs-dismiss="modal">Publish</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+      <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown">
+        <i class="bi bi-gear-fill"></i>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Profile</a></li>
+        <li><a class="dropdown-item" href="#">Accesibility</a></li>
+        <li><a class="dropdown-item" href="#">Privacy and Data</a></li>
+        <div class="dropdown-divider"></div>
+        <li><a class="dropdown-item text-danger" href="#">Logout</a></li>
+      </ul>
+  </div>
+  </nav>
+
+  <!-- -------------------------List/Grid View--------------------------- -->
+  <div class="middle_btn text-center">
+    <button onclick="gridView()" class="btn active grid"><i class="bi bi-grid"></i></button>
+    <button onclick="listView()" class="btn active list"><i class="bi bi-card-list"></i></button>
+  </div>
+  <!-- -------------------------Middle--------------------------- -->
+  <div class="row text-center d-flex justify-content-evenly">
+
+    <div class="card d-flex justify-content-center">
+      <div class="card-body">
+        <h5 class="card-title">Astronaut AI</h5>
+        <img class="card-img-fluid"
+          src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/10fc45da-4951-4d3d-a8d9-2068d29973ae/dgwzqp1-06db0012-9809-4164-9f5f-7754c72b1582.png/v1/fit/w_400,h_400,q_70,strp/astronaut__close_3_3_by_spidervector_dgwzqp1-300w-2x.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MjA0OCIsInBhdGgiOiJcL2ZcLzEwZmM0NWRhLTQ5NTEtNGQzZC1hOGQ5LTIwNjhkMjk5NzNhZVwvZGd3enFwMS0wNmRiMDAxMi05ODA5LTQxNjQtOWY1Zi03NzU0YzcyYjE1ODIucG5nIiwid2lkdGgiOiI8PTIwNDgifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.mHHVRkOm70oe3CmlPnuVJOJ3nvhl2Vv79TqzOm8ID0c"
+          alt="Card image fluid">
+        <br>
+        <span class="text-start"><strong>205</strong>Likes</span>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+          content. This content is a little bit longer.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Omnimous Gate</h5>
+        <img class="card-img-fluid"
+          src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/91dda5fd-93d0-4124-abe4-50bdf8e54899/detiy2d-4beb46eb-4410-4e7a-a2dc-84373455e826.jpg/v1/fill/w_400,h_400,q_70,strp/ominous_gate_by_nele_diel_detiy2d-350t-2x.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzAwIiwicGF0aCI6IlwvZlwvOTFkZGE1ZmQtOTNkMC00MTI0LWFiZTQtNTBiZGY4ZTU0ODk5XC9kZXRpeTJkLTRiZWI0NmViLTQ0MTAtNGU3YS1hMmRjLTg0MzczNDU1ZTgyNi5qcGciLCJ3aWR0aCI6Ijw9MTIwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.eHOlaGTtX08UITjLOkS3UdWAc5hp532SfIRmxvAo64w"
+          alt="Card image cap">
+        <br>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Meteor Shower</h5>
+        <img class="card-img-fluid"
+          src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b3be1dae-3caa-4d45-be6c-3de586ba95e2/deogvao-f8b9492f-a015-4609-9ce8-556325185e58.jpg/v1/fill/w_400,h_400,q_70,strp/meteor_shower_by_bisbiswas_deogvao-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTA4MCIsInBhdGgiOiJcL2ZcL2IzYmUxZGFlLTNjYWEtNGQ0NS1iZTZjLTNkZTU4NmJhOTVlMlwvZGVvZ3Zhby1mOGI5NDkyZi1hMDE1LTQ2MDktOWNlOC01NTYzMjUxODVlNTguanBnIiwid2lkdGgiOiI8PTE5MjAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.gAHH3jtyMREfWVHw-n7dPx1UAZolPk8Wxif76Jqi9Ns"
+          alt="Card image cap">
+        <br>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+          content. This card has even longer content than the first to show that equal height action.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Astronaut AI</h5>
+        <img class="card-img-fluid"
+          src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/10fc45da-4951-4d3d-a8d9-2068d29973ae/dgwzqp1-06db0012-9809-4164-9f5f-7754c72b1582.png/v1/fit/w_400,h_400,q_70,strp/astronaut__close_3_3_by_spidervector_dgwzqp1-300w-2x.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MjA0OCIsInBhdGgiOiJcL2ZcLzEwZmM0NWRhLTQ5NTEtNGQzZC1hOGQ5LTIwNjhkMjk5NzNhZVwvZGd3enFwMS0wNmRiMDAxMi05ODA5LTQxNjQtOWY1Zi03NzU0YzcyYjE1ODIucG5nIiwid2lkdGgiOiI8PTIwNDgifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.mHHVRkOm70oe3CmlPnuVJOJ3nvhl2Vv79TqzOm8ID0c"
+          alt="Card image fluid">
+        <br>
+        <span class="text-start"><strong>205</strong>Likes</span>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+          content. This content is a little bit longer.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Omnimous Gate</h5>
+        <img class="card-img-fluid"
+          src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/91dda5fd-93d0-4124-abe4-50bdf8e54899/detiy2d-4beb46eb-4410-4e7a-a2dc-84373455e826.jpg/v1/fill/w_400,h_400,q_70,strp/ominous_gate_by_nele_diel_detiy2d-350t-2x.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzAwIiwicGF0aCI6IlwvZlwvOTFkZGE1ZmQtOTNkMC00MTI0LWFiZTQtNTBiZGY4ZTU0ODk5XC9kZXRpeTJkLTRiZWI0NmViLTQ0MTAtNGU3YS1hMmRjLTg0MzczNDU1ZTgyNi5qcGciLCJ3aWR0aCI6Ijw9MTIwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.eHOlaGTtX08UITjLOkS3UdWAc5hp532SfIRmxvAo64w"
+          alt="Card image cap">
+        <br>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Meteor Shower</h5>
+        <img class="card-img-fluid"
+          src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b3be1dae-3caa-4d45-be6c-3de586ba95e2/deogvao-f8b9492f-a015-4609-9ce8-556325185e58.jpg/v1/fill/w_400,h_400,q_70,strp/meteor_shower_by_bisbiswas_deogvao-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTA4MCIsInBhdGgiOiJcL2ZcL2IzYmUxZGFlLTNjYWEtNGQ0NS1iZTZjLTNkZTU4NmJhOTVlMlwvZGVvZ3Zhby1mOGI5NDkyZi1hMDE1LTQ2MDktOWNlOC01NTYzMjUxODVlNTguanBnIiwid2lkdGgiOiI8PTE5MjAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.gAHH3jtyMREfWVHw-n7dPx1UAZolPk8Wxif76Jqi9Ns"
+          alt="Card image cap">
+        <br>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+          content. This card has even longer content than the first to show that equal height action.</p>
+      </div>
+    </div>
+
+    <div class="card ">
+      <div class="card-body">
+        <h5 class="card-title">Astronaut AI</h5>
+        <img class="card-img-fluid"
+          src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/10fc45da-4951-4d3d-a8d9-2068d29973ae/dgwzqp1-06db0012-9809-4164-9f5f-7754c72b1582.png/v1/fit/w_400,h_400,q_70,strp/astronaut__close_3_3_by_spidervector_dgwzqp1-300w-2x.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MjA0OCIsInBhdGgiOiJcL2ZcLzEwZmM0NWRhLTQ5NTEtNGQzZC1hOGQ5LTIwNjhkMjk5NzNhZVwvZGd3enFwMS0wNmRiMDAxMi05ODA5LTQxNjQtOWY1Zi03NzU0YzcyYjE1ODIucG5nIiwid2lkdGgiOiI8PTIwNDgifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.mHHVRkOm70oe3CmlPnuVJOJ3nvhl2Vv79TqzOm8ID0c"
+          alt="Card image fluid">
+        <br>
+        <span class="text-start"><strong>205</strong>Likes</span>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+          content. This content is a little bit longer.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Omnimous Gate</h5>
+        <img class="card-img-fluid"
+          src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/91dda5fd-93d0-4124-abe4-50bdf8e54899/detiy2d-4beb46eb-4410-4e7a-a2dc-84373455e826.jpg/v1/fill/w_400,h_400,q_70,strp/ominous_gate_by_nele_diel_detiy2d-350t-2x.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzAwIiwicGF0aCI6IlwvZlwvOTFkZGE1ZmQtOTNkMC00MTI0LWFiZTQtNTBiZGY4ZTU0ODk5XC9kZXRpeTJkLTRiZWI0NmViLTQ0MTAtNGU3YS1hMmRjLTg0MzczNDU1ZTgyNi5qcGciLCJ3aWR0aCI6Ijw9MTIwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.eHOlaGTtX08UITjLOkS3UdWAc5hp532SfIRmxvAo64w"
+          alt="Card image cap">
+        <br>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Meteor Shower</h5>
+        <img class="card-img-fluid"
+          src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b3be1dae-3caa-4d45-be6c-3de586ba95e2/deogvao-f8b9492f-a015-4609-9ce8-556325185e58.jpg/v1/fill/w_400,h_400,q_70,strp/meteor_shower_by_bisbiswas_deogvao-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTA4MCIsInBhdGgiOiJcL2ZcL2IzYmUxZGFlLTNjYWEtNGQ0NS1iZTZjLTNkZTU4NmJhOTVlMlwvZGVvZ3Zhby1mOGI5NDkyZi1hMDE1LTQ2MDktOWNlOC01NTYzMjUxODVlNTguanBnIiwid2lkdGgiOiI8PTE5MjAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.gAHH3jtyMREfWVHw-n7dPx1UAZolPk8Wxif76Jqi9Ns"
+          alt="Card image cap">
+        <br>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+          content. This card has even longer content than the first to show that equal height action.</p>
+      </div>
+    </div>
+
+  </div>
+  <!-- -------------------------Script for chaning List/Grid View--------------------------- -->
+  <script>
+    //modal
+    $('#myModal').on('shown.bs.modal', function () {
+      $('#myInput').trigger('focus')
+    })
+
+    var myModal = new bootstrap.Modal(document.getElementById('myModal'), options)
+
+    // Get the elements with class="column"
+    var elements = document.getElementsByClassName("card");
+
+    // Declare a loop variable
+    var i;
+
+    // List View
+    function listView() {
+      for (i = 0; i < elements.length; i++) {
+        elements[i].style.width = "100%";
+      }
+    }
+
+    // Grid View
+    function gridView() {
+      for (i = 0; i < elements.length; i++) {
+        elements[i].style.width = "50%";
+      }
+    }
+  </script>
+</body>
+
+</html>
